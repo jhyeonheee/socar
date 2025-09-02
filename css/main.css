@@ -1,0 +1,564 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+/* 초기값 end */
+
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-ExtraBold.eot');
+    src: url('../font/pre/Pretendard-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('../font/pre/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Bold.eot');
+    src: url('../font/pre/Pretendard-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Bold.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Black.eot');
+    src: url('../font/pre/Pretendard-Black.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Black.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-ExtraLight.eot');
+    src: url('../font/pre/Pretendard-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-ExtraLight.woff2') format('woff2'),
+        url('../font/pre/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Medium.eot');
+    src: url('../font/pre/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Medium.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Light.eot');
+    src: url('../font/pre/Pretendard-Light.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Light.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Regular.eot');
+    src: url('../font/pre/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Regular.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-SemiBold.eot');
+    src: url('../font/pre/Pretendard-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-SemiBold.woff2') format('woff2'),
+        url('../font/pre/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'pretendard';
+    src: url('../font/pre/Pretendard-Thin.eot');
+    src: url('../font/pre/Pretendard-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../font/pre/Pretendard-Thin.woff2') format('woff2'),
+        url('../font/pre/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* 공통적으로 들어갈 스타일(컨테이너, 타이틀 버튼 크기 등) */
+
+body {
+    background-color: #141a24;
+    color: white;
+    line-height: 1.5;
+    font-family: 'pretendard';
+
+}
+
+.header .inner,
+.footer .inner {
+    max-width: 1536px;
+    width: calc(100% - 96px);
+    margin: 0 auto;
+}
+
+.main .inner {
+    max-width: 1012px;
+    width: calc(100% - 96px);
+    margin: 0 auto;
+}
+
+.main .inner h3 {
+    font-size: 37px;
+    margin-bottom: 96px;
+}
+
+.main .inner h3 strong {
+    display: block;
+    /* 줄바꿈 처리 */
+}
+
+
+/* header */
+.header {
+    width: 100%;
+    height: 72px;
+    position: absolute;
+    /* 로고 영상 위로 올라감 */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* .inner에게 height값이 없어서 로고가 안보임 */
+    height: 100%;
+    /* 로고 안보임 해결! */
+}
+
+.header .inner .logo {
+    height: 36px;
+}
+
+.header .inner .logo a {
+    display: block;
+    /* 인라인 태그 풀기 */
+    height: 100%;
+}
+
+.header .inner .logo a img {
+    height: 100%;
+    display: block;
+    /* svg 이미지의 경우 이미지가 딱 맞지않음. 방지 */
+}
+
+.header .inner .menu_open {
+    height: 29px;
+}
+
+.header .inner .menu_open img {
+    height: 100%;
+}
+
+.header .inner .nav {
+    display: none;
+}
+
+.header .inner .nav .menu_close {}
+
+.header .inner .nav .menu_close img {}
+
+.header .inner .nav .gnb {}
+
+.header .inner .nav .gnb li {}
+
+.header .inner .nav .gnb li a.depth-01 {}
+
+/* main_visual */
+
+.main_visual {
+    height: 100vh;
+    position: relative;
+}
+
+.main_visual video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main_visual .text {
+    width: 100%;
+    /* left 0 후 텍스트 가운데 배치 방법 */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* 이렇게 해야 반응형 작성 시 텍스트 줄바꿈처리 x */
+    transform: translate(0, -50%);
+    text-align: center;
+
+}
+
+.main_visual .text h2 {
+    font-size: 95px;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.main_visual .text p {
+    font-size: 40px;
+    font-size: 600;
+}
+
+.main_visual .visual_btn {
+    max-width: 1536px;
+    width: calc(100% - 96px);
+    position: absolute;
+    /* 같이 쓰면 margin:0 auto; 적용 안됨 */
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.main_visual .visual_btn a {
+    display: block;
+    width: 228px;
+    height: 72px;
+    background-color: #0078FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_visual .visual_btn a img {
+    width: 18px;
+    /* 아이콘은 w와 h중 하나만 작성하는것이 좋음 */
+}
+
+.main_visual .visual_btn a span {
+    font-size: 20px;
+}
+
+/* .section-01 */
+.section-01 {
+    padding: 160px 0 96px;
+}
+
+.section-01 .inner {}
+
+.section-01 .inner h3 {
+    font-weight: 400;
+}
+
+.section-01 .inner .slides {
+    position: relative;
+}
+
+.section-01 .inner .slides .list {}
+
+.section-01 .inner .slides .list .item {
+    width: 100%;
+    height: 524px;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    display: none;
+}
+
+.section-01 .inner .slides .list .item::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.829) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.section-01 .inner .slides .list .item.active {
+    display: block;
+}
+
+.section-01 .inner .slides .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.section-01 .inner .slides .list .item .text {
+    position: absolute;
+    top: 48px;
+    /* 혹은 padding 값으로 조절 가능 */
+    left: 48px;
+}
+
+.section-01 .inner .slides .list .item .text strong {
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.section-01 .inner .slides .list .item .text p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.section-01 .inner .slides .slide_navigation button {
+    width: 49px;
+    height: 48px;
+}
+
+.section-01 .inner .slides .slide_navigation button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-01 .inner .slides .slide_navigation .next {
+    position: absolute;
+    top: 50%;
+    /* button 태그에게 한 번만 작성해도 ㄱㅊ */
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+.section-01 .inner .slides .slide_navigation .next img {}
+
+.section-01 .inner .slides .slide_navigation .prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+.section-01 .inner .slides .slide_navigation .prev img {}
+
+/* .section-02  */
+.section-02 {
+    padding: 160px 0;
+}
+
+.section-02 .inner {}
+
+.section-02 .inner h3 {
+    font-size: 37px;
+    font-weight: 400;
+}
+
+.section-02 .inner h3 strong {
+    font-weight: 700;
+}
+
+.section-02 .inner .list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 36px;
+    
+}
+
+.section-02 .inner .list .item {
+    width: 48.22%;
+    /* (448 / 1012 *100) */
+    border-radius: 16px;
+    overflow: hidden;
+    
+}
+
+.section-02 .inner .list .item a::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #00000046;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.section-02 .inner .list .item:hover a::before{
+    display: block;
+}
+
+.section-02 .inner .list .item a {
+    padding-bottom: 132.58%;
+    /* 비율계산 : 세로 / 가로 * 100*/
+    display: block;
+    position: relative;
+}
+
+.section-02 .inner .list .item a img {}
+
+.section-02 .inner .list .item a>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+}
+
+.section-02 .inner .list .item .text_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: flex-end; */
+    /* .item_btn 한테 display:flex + justify-content:flex-end 줘도 됨 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 32px;
+}
+
+.section-02 .inner .list .item .text_wrap .text {
+    width: 100%;
+}
+
+.section-02 .inner .list .item .text_wrap .text strong {
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.section-02 .inner .list .item .text_wrap .text p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.section-02 .inner .list .item .text_wrap .item_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-02 .inner .list .item .text_wrap .item_btn img {}
+
+.section-02 .inner .list .item .text_wrap .item_btn img.before {}
+
+.section-02 .inner .list .item:hover .text_wrap .item_btn img.before{
+    display: none;
+}
+
+.section-02 .inner .list .item .text_wrap .item_btn img.after {
+    display: none;
+}
+
+.section-02 .inner .list .item:hover .text_wrap .item_btn img.after{
+    display: block;
+    z-index: 200;
+}
+
+/* section-03 */
+
+.section-03 {
+    height: 250px;
+    position: relative;
+}
+.section-03 a {
+    
+}
+
+.section-03 a::before{
+    content: ('');
+    width: 100%;
+    height: 100%;
+    background-color: #00000052;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.section-03 a > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-03 a .text_wrap {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50px);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.section-03 a .text_wrap strong {
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.section-03 a .text_wrap .btn {
+    height: 75px;
+    padding: 0 31px;
+    border: 1px solid white;
+    border-radius: 10px;
+    line-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+} 
+.section-03 a .text_wrap .btn span {
+    font-size: 20px;
+    font-weight: 500;
+}
+.section-03 a .text_wrap .btn img {}
+
+/* footer */
